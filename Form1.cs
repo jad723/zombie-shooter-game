@@ -35,7 +35,12 @@ namespace Zombie_Shooter_Game
         {
             if (playerHealth > 1) healthBar.Value = playerHealth;
 
-            else gameOver = true;
+            else
+            {
+                gameOver = true;
+                player.Image = Properties.Resources.dead;
+                GameTimer.Stop();
+            }
 
             txtAmmo.Text = "Ammo: " + ammo;
             txtScore.Text = "Kills: " + score;
@@ -47,6 +52,20 @@ namespace Zombie_Shooter_Game
             if(goUp == true && player.Top > 45) player.Top -= speed;
 
             if (goDown == true && player.Top + player.Height < this.ClientSize.Height) player.Top += speed;
+
+            foreach(Control x in this.Controls)
+            {
+                if(x is PictureBox && (string) x.Tag == "ammo")
+                {
+                    if (player.Bounds.IntersectsWith(x.Bounds))
+                    {
+                        this.Controls.Remove(x);
+                        ((PictureBox)x).Dispose();
+                        ammo += 5;
+
+                    }
+                }
+            }
             
 
         }
