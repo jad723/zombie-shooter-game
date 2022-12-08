@@ -153,7 +153,7 @@ namespace Zombie_Shooter_Game
             ammo.Image = Properties.Resources.ammo_Image;
             ammo.SizeMode = PictureBoxSizeMode.AutoSize;
             ammo.Left = randNum.Next(10, this.ClientSize.Width - ammo.Width);
-            ammo.Top = randNum.Next(10, this.ClientSize.Height - ammo.Height);
+            ammo.Top = randNum.Next(60, this.ClientSize.Height - ammo.Height);
             ammo.Tag = "ammo";
             this.Controls.Add(ammo);
 
