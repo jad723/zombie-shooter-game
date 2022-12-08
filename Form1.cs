@@ -69,6 +69,8 @@ namespace Zombie_Shooter_Game
 
                 if(x is PictureBox && (string) x.Tag == "zombie")
                 {
+                    if (player.Bounds.IntersectsWith(x.Bounds)) playerHealth--; 
+
                     if(x.Left > player.Left) // zombie to the right of the player
                     {
                         x.Left -= zombieSpeed;
@@ -121,6 +123,8 @@ namespace Zombie_Shooter_Game
 
         private void KeyIsDown(object sender, KeyEventArgs e)
         {
+            if (gameOver) return;
+
             if(e.KeyCode == Keys.Left)
             {
                 goLeft = true;
@@ -162,12 +166,14 @@ namespace Zombie_Shooter_Game
 
             if (e.KeyCode == Keys.Down) goDown = false;
 
-            if (e.KeyCode == Keys.Space && ammo > 0)
+            if (e.KeyCode == Keys.Space && ammo > 0 && !gameOver)
             {
                 ammo--;
                 ShootBullet(facing);
                 if (ammo < 1) DropAmmo();
             }
+
+            if (e.KeyCode == Keys.Enter && gameOver) RestartGame();
 
         }
 
@@ -224,6 +230,7 @@ namespace Zombie_Shooter_Game
             goDown = false;
             goLeft = false;
             goRight = false;
+            gameOver = false;
 
             playerHealth = 100;
             score = 0;
