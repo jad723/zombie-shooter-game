@@ -82,7 +82,7 @@
             // player
             // 
             this.player.Image = global::Zombie_Shooter_Game.Properties.Resources.up;
-            this.player.Location = new System.Drawing.Point(376, 540);
+            this.player.Location = new System.Drawing.Point(376, 493);
             this.player.Name = "player";
             this.player.Size = new System.Drawing.Size(71, 100);
             this.player.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
