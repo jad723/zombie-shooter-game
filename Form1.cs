@@ -28,6 +28,7 @@ namespace Zombie_Shooter_Game
         public Form1()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 
         private void MainTimerEvent(object sender, EventArgs e)

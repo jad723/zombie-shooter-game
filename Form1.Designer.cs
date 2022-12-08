@@ -106,6 +106,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtScore);
             this.Controls.Add(this.txtAmmo);
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Zombie Shooter Game";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyIsDown);
