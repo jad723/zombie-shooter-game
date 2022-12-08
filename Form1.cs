@@ -40,6 +40,7 @@ namespace Zombie_Shooter_Game
             {
                 gameOver = true;
                 player.Image = Properties.Resources.dead;
+                healthBar.Value = 0;
                 GameTimer.Stop();
             }
 
