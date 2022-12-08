@@ -43,9 +43,9 @@ namespace Zombie_Shooter_Game
 
             if (goRight == true && player.Left + player.Width < this.ClientSize.Width) player.Left += speed;
 
-            if(goUp == true && player.Top > 0) player.Top -= speed;
+            if(goUp == true && player.Top > 45) player.Top -= speed;
 
-            if(goDown == true && player.Top + player.Height < this.ClientSize.Height) player.Top += speed;
+            if (goDown == true && player.Top + player.Height < this.ClientSize.Height) player.Top += speed;
             
 
         }
