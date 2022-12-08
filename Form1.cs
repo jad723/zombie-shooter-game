@@ -28,6 +28,7 @@ namespace Zombie_Shooter_Game
         public Form1()
         {
             InitializeComponent();
+            RestartGame();
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 
@@ -163,7 +164,28 @@ namespace Zombie_Shooter_Game
 
         private void RestartGame()
         {
+            player.Image = Properties.Resources.up;
 
+            foreach(PictureBox i in zombiesList) this.Controls.Remove(i);
+
+            zombiesList.Clear();
+
+            for (int i = 0; i < 3; i++) MakeZombies();
+
+            goUp = false;
+            goDown = false;
+            goLeft = false;
+            goRight = false;
+
+            playerHealth = 100;
+            score = 0;
+            ammo = 10;
+
+            player.Left = 376;
+            player.Top = 493;
+
+            GameTimer.Start();
+            
         }
     }
 }
