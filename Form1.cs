@@ -239,6 +239,15 @@ namespace Zombie_Shooter_Game
             player.Left = 376;
             player.Top = 493;
 
+            foreach (Control x in this.Controls)
+            {
+                if (x is PictureBox && (string)x.Tag == "ammo")
+                {                   
+                    this.Controls.Remove(x);
+                    ((PictureBox)x).Dispose();   
+                }
+            }
+
             GameTimer.Start();
             
         }
