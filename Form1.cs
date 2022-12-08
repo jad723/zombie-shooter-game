@@ -93,7 +93,27 @@ namespace Zombie_Shooter_Game
                         ((PictureBox)x).Image = Properties.Resources.zdown;
                     }
                 }
+                
+                foreach(Control j in this.Controls)
+                {
+                    if(j is PictureBox && (string) j.Tag == "bullet" && x is PictureBox && (string) x.Tag == "zombie")
+                    {
+                        if (x.Bounds.IntersectsWith(j.Bounds))
+                        {
+                            score++;
 
+                            this.Controls.Remove(j);
+                            ((PictureBox)j).Dispose();
+
+                            this.Controls.Remove(x);
+                            ((PictureBox)x).Dispose();
+                            zombiesList.Remove(((PictureBox)x));
+
+                            MakeZombies();
+
+                        }
+                    } 
+                }
             }
             
 
