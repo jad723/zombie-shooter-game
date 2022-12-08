@@ -1,0 +1,9 @@
+# Auto generated folders
+obj/*
+bin/*
+
+# Visual Studio cache
+.vs/*
+
+# Auto generated user files
+*.user
