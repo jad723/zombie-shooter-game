@@ -66,6 +66,34 @@ namespace Zombie_Shooter_Game
 
                     }
                 }
+
+                if(x is PictureBox && (string) x.Tag == "zombie")
+                {
+                    if(x.Left > player.Left) // zombie to the right of the player
+                    {
+                        x.Left -= zombieSpeed;
+                        ((PictureBox)x).Image = Properties.Resources.zleft;
+                    }
+
+                    if (x.Left < player.Left) // zombie to the left of the player
+                    {
+                        x.Left += zombieSpeed;
+                        ((PictureBox)x).Image = Properties.Resources.zright;
+                    }
+
+                    if (x.Top > player.Top) // zombie to the top of the player
+                    {
+                        x.Top -= zombieSpeed;
+                        ((PictureBox)x).Image = Properties.Resources.zup;
+                    }
+
+                    if (x.Top < player.Top) // zombie to the bottom of the player
+                    {
+                        x.Top += zombieSpeed;
+                        ((PictureBox)x).Image = Properties.Resources.zdown;
+                    }
+                }
+
             }
             
 
