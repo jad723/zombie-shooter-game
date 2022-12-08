@@ -29,7 +29,11 @@ namespace Zombie_Shooter_Game
         {
             InitializeComponent();
             RestartGame();
+            healthBar.ForeColor = Color.Red;
+            healthBar.BackColor = Color.White;
+            healthBar.Style = ProgressBarStyle.Continuous;
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            
         }
 
         private void MainTimerEvent(object sender, EventArgs e)
@@ -248,6 +252,8 @@ namespace Zombie_Shooter_Game
                     ((PictureBox)x).Dispose();   
                 }
             }
+
+            
 
             GameTimer.Start();
             
