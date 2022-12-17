@@ -7,3 +7,6 @@ bin/*
 
 # Auto generated user files
 *.user
+
+# pfx file
+*.pfx
